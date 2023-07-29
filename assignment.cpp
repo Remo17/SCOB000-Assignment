@@ -1,4 +1,3 @@
-// Online C++ compiler to run C++ program online
 #include <iostream>
 using namespace std;
 
@@ -19,20 +18,23 @@ int Highest_Test(int Mark)
 
 int main() {
 int NumModules;
-cout<< "How many modules are you registered for? " ;
-cin >>NumModules;
-if(NumModules > 8)
-    {
-  cout<< "Invalid number of Modules";
-
-    }//if for number of modules
-string arr_modules[10];
-int arr_Marks[10];
 int CurrentMarks,Highes_Mark;
 
+cout<< "How many modules are you registered for? " ;//number of modules
+cin >>NumModules;
 
-for (int i=0 ; i<3; ++i)
-    {
+    if(NumModules > 8){
+        cout<< "Invalid number of Modules";
+        exit;
+        }//if for number of modules is above threshold
+    else{
+
+        string arr_modules[NumModules];
+        int arr_Marks[NumModules];
+
+
+
+for (int i=0 ; i<2; ++i){
     cout<< "Enter name of module "<<i+1;
     cin >> arr_modules[i];
     cout<< "Mark for "<<arr_modules[i]<< endl;
@@ -40,7 +42,15 @@ for (int i=0 ; i<3; ++i)
     arr_Marks[i]= CurrentMarks;
     Highes_Mark = Highest_Test(CurrentMarks);
     }//end of for
-cout << Highes_Mark;
+
+for (int j=0; j=4 ; j++){
+    cout << arr_modules[0] <<" "<< arr_Marks[0];
+    }//end of for
+
+    }// end of else
+
+
+    cout << Highes_Mark;
 
     return 0;
 }
